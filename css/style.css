@@ -1,5 +1,12 @@
 html, body {
     height: 100%;
     width: 100%;
-    background-color: darkslategrey;
+    background-color: #12151a;
+    color: whitesmoke;
+    text-align: center;
+    overflow-x: hidden;
+}
+button {
+    background-color: saddlebrown;
+    color: white;
 }
