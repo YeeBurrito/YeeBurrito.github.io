@@ -15,14 +15,14 @@ function updateSeconds()
 function save()
 {
     game.lastSave = Date.now();
-    localStorage.setItem("grimeSave", JSON.stringify(game));
-    localStorage.setItem("grimeLastSaved", game.lastSave);
+    localStorage.setItem("localSave", JSON.stringify(game));
+    localStorage.setItem("localLastSaved", game.lastSave);
 }
 
 function load()
 {
-    var savegame = JSON.parse(localStorage.getItem("grimeSave"));;
-    var lastSave = localStorage.getItem("grimeLastSaved");
+    var savegame = JSON.parse(localStorage.getItem("localSave"));;
+    var lastSave = localStorage.getItem("localLastSaved");
     if (savegame !== null)
     {
         //set each variable in the savegame to the game
