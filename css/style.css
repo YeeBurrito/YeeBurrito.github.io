@@ -1,12 +1,49 @@
+/* general styles */
 html, body {
     height: 100%;
     width: 100%;
-    background-color: #12151a;
-    color: whitesmoke;
+    background-color: #0f0f0f;
+    color: #dfdfdf;
     text-align: center;
     overflow-x: hidden;
+    font-family: "Lucida Console", "Courier New", monospace;
+    margin: 0;
+    padding: 0;
 }
+
+/* text styles */
+h1, h2, h3, h4, h5, h6, p {
+	font-family: "Lucida Console", "Courier New", monospace
+}
+
 button {
     background-color: saddlebrown;
     color: white;
+    font-family: "Lucida Console", "Courier New", monospace
+}
+
+#mainContent {
+    display: none;
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #0f0f0f;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    border-radius: 60px;
+    text-align: center;
+}
+
+#proceedBtn {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
 }

@@ -1,6 +1,7 @@
 //game currencies
 var game = {
     lastSave: 0,
+    lore_index: 0,
     dirt: new Decimal(0)
 };
 
@@ -29,6 +30,18 @@ function load()
         for (var i in savegame)
         {
             game[i] = new Decimal(savegame[i]);
+        }
+        
+        lore_index = game.lore_index;
+        lore_index = 0;
+        if (lore_index == 0)
+        {
+            document.getElementById("popup").style.display = "block";
+            document.getElementById("proceedBtn").addEventListener("click", function() {
+                document.getElementById("popup").style.display = "none";
+                document.getElementById('mainContent').style.display = 'block';
+                game.lore_index++;
+            });
         }
 
         document.getElementById("dirtAmount").innerHTML = game.dirt;
