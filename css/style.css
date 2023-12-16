@@ -25,20 +25,26 @@ h1, h2, h3, h4, h5, h6, p {
     font-family: "Lucida Console", "Courier New", monospace
 }
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
 /* main window style */
-/* only the stuff in here should use flexbox */
-/* everything else should be positioned absolutely */
-/* the main window should be made of three columns */
 
 #mainContent {
-    display: flex;
+    display: none;
     flex-direction: row;
   }
 
 .column {
-    padding: 20px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
+    padding: 3px;
 }
   
 .smallColumn {
@@ -47,6 +53,10 @@ h1, h2, h3, h4, h5, h6, p {
   
 .largeColumn {
     flex: 1.9;
+}
+
+#resourcesColumn {
+    text-align: left;
 }
 
 .infoText {
