@@ -25,20 +25,28 @@ h1, h2, h3, h4, h5, h6, p {
     font-family: "Lucida Console", "Courier New", monospace
 }
 
+/* main window style */
+/* only the stuff in here should use flexbox */
+/* everything else should be positioned absolutely */
+/* the main window should be made of three columns */
+
+#mainContent {
+    display: flex;
+    flex-direction: row;
+  }
+
 .column {
     padding: 20px;
-    border: 1px solid #ddd;
     box-sizing: border-box;
-    display: flex; /* Add this line */
-    flex-direction: column; /* Add this line */
+    border: 1px solid #ddd;
 }
-
+  
 .smallColumn {
-    flex: 1;
+    flex: 1.1;
 }
-
+  
 .largeColumn {
-    flex: 2;
+    flex: 1.9;
 }
 
 .infoText {
@@ -50,10 +58,6 @@ button {
     background-color: saddlebrown;
     color: white;
     font-family: "Lucida Console", "Courier New", monospace
-}
-
-#mainContent {
-    display: none;
 }
 
 #popup {
