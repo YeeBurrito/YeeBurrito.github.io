@@ -25,6 +25,10 @@ h1, h2, h3, h4, h5, h6, p {
     font-family: "Lucida Console", "Courier New", monospace
 }
 
+.tabContent {
+    display: none;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -40,8 +44,9 @@ li {
 
 #mainContent {
     display: none;
-    flex-direction: row;
-  }
+    /* flex-direction: row; */
+    /* align-content: center; */
+}
 
 .column {
     padding: 3px;
@@ -64,10 +69,51 @@ li {
     padding: 0;
 }
 
+#gameContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 button {
-    background-color: saddlebrown;
-    color: white;
-    font-family: "Lucida Console", "Courier New", monospace
+    vertical-align: middle;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    font-family: "Lucida Console", "Courier New", monospace;
+    border: none;
+    border-radius: 8px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #328e35;
+}
+
+button:disabled {
+    background-color: #7f8c8d;
+    cursor: not-allowed;
+}
+
+#loadingBarContainer {
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: auto;
+    justify-content: center;
+    width: 300px;
+    height: 35px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+#loadingBar {
+    height: 100%;
+    width: 0;
+    background-color: #4CAF50;
+    transition: width 0.1s linear;
 }
 
 #popup {
@@ -91,4 +137,86 @@ button {
     border: none;
     cursor: pointer;
     border-radius: 8px;
+}
+
+#forwardBtn, #backwardBtn{
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#forwardBtn:hover, #backwardBtn:hover {
+    background-color: #2980b9;
+}
+
+#forwardBtn:disabled, #backwardBtn:disabled {
+    background-color: #7f8c8d;
+    cursor: not-allowed;
+}
+
+.navBar {
+    padding: 10px 0;
+    text-align: center;
+}
+.navBar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navBar li {
+    display: inline-flex;
+    margin-right: 10px;
+}
+
+.navBar a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navBar a:hover {
+    color: #f39c12;
+}
+
+#infoText {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #1c1c1c;
+    max-height: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 20px auto;
+    text-align: left;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+    scrollbar-color: #2980b9 #0f0f0f
+}
+
+#infoText::-webkit-scrollbar {
+    width: 12px;
+}
+
+#infoText::-webkit-scrollbar-track {
+    background-color: #171717;
+    border-radius: 10px;
+}
+
+#infoText::-webkit-scrollbar-thumb{
+    background-color: #555;
+    border-radius: 10px;
+    border: 3px solid #0f0f0f;
+}
+
+@media screen and (max-height: 600px) {
+    #infoText {
+        max-height: 200px;
+    } 
 }
