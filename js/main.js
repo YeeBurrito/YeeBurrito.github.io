@@ -23,7 +23,8 @@ var game = {
             dirtMiningSpeed: new Decimal(5), //amount of time in seconds to mine dirt
             dirtMiningSpeedScaling: new Decimal(0.9),
             dirtMiningPower: new Decimal(1),
-            dirtMiningPowerScaling: new Decimal(1.1)
+            dirtMiningPowerScaling: new Decimal(1.1),
+            dirtSellingPower: new Decimal(1),
         }
     }
 };
@@ -56,6 +57,11 @@ function update()
     {
         document.getElementById(key + "Amount").innerHTML = game.resources[key];
     }
+    //update the display of each buyable
+    //TODO
+    //update the display of each upgrade
+    //TODO
+    document.getElementById("dirtValue").innerHTML = game.buyables.dirtUpgrades.dirtSellingPower;
 }
 
 function save()
@@ -127,7 +133,6 @@ function load()
         }
         
         displayInfoText(game.infoTextLocation)
-        document.getElementById("dirtAmount").innerHTML = game.resources.dirt;
         showTab('mine');
     }
 }
@@ -233,6 +238,16 @@ function addResources()
 function addDirt()
 {
     game.resources.dirt = game.resources.dirt.add(game.buyables.dirtUpgrades.dirtMiningPower);
+}
+
+function sellDirt(amount)
+{
+    if (amount == -1)
+    {
+        amount = game.resources.dirt;
+    }
+    game.resources.gold = game.resources.gold.add(game.buyables.dirtUpgrades.dirtSellingPower.mul(amount));
+    game.resources.dirt = game.resources.dirt.sub(amount);
 }
 
 function displayInfoText(textIndex)
